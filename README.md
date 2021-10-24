@@ -20,6 +20,7 @@ host ip address is **WLAN IPv4 Address** XXX.XXX.XXX.XXX (192.168.xx.xx in gener
 
 ```sh
 > npm install
+> npm update
 > npm start
 ```
 

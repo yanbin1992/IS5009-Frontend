@@ -15,7 +15,7 @@ function Header(props) {
     <Layout.Header style={{ height: '48px', lineHeight: '48px', padding: '0 30px' }}>
       <Link to="/">
         <span style={{ lineHeight: '48px', fontWeight: 'bold', fontSize: 'medium' }}>
-          <Icon type="layout" /> Web Fullstack Practical Test 2021
+          <Icon type="layout" /> FinBot
         </span>
       </Link>
       <span level={4} style={{ lineHeight: '48px', float: 'right', color: 'rgba(255, 255, 255, 0.65)' }}>

@@ -4,6 +4,7 @@ import SignUp from 'containers/SignUp';
 import NotFound from 'containers/NotFound';
 import Attachment from 'containers/Attachment';
 import SignOut from 'containers/SignOut';
+import EntryTest from 'containers/EntryTest';
 
 const mainRoutes = [
   {
@@ -38,6 +39,12 @@ const mainRoutes = [
     icon: 'close-circle',
     component: NotFound,
   },
+  {
+    path: '/entrytest',
+    name: 'test',
+    hide: true,
+    component: EntryTest
+  }
 ];
 
 export default mainRoutes;

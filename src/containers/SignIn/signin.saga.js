@@ -12,6 +12,7 @@ export function* postSignInSaga() {
 
   try {
     const user = yield call(postSignInAPI, { email, password });
+    console.log(user)
     yield put(postSignInSuccess(user));
     yield put(push('/'));
   } catch (error) {
