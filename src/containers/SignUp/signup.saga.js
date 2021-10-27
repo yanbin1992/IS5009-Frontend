@@ -15,7 +15,7 @@ export function* postSignUpSaga() {
     const user = yield call(postSignUpAPI, { name, email, password });
 
     yield put(postSignUpSuccess(user));
-    yield put(push('/'));
+    yield put(push('/entrytest'));
   } catch (error) {
     yield put(postSignUpFailure(error));
   }

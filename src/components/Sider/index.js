@@ -8,6 +8,7 @@ import { Layout, Icon, Menu } from 'antd';
 
 import mainRoutes from 'routes/mainRoutes';
 import { makeSelectUser } from 'global.selectors';
+import { isMobile } from 'Helper/DeviceHelper';
 
 /* eslint-disable indent */
 
@@ -32,7 +33,8 @@ const renderSiderItems = props => {
           </Menu.Item>
         );
       } else {
-        return <React.Fragment />;
+        return <React.Fragment />
+
       }
     }
   });

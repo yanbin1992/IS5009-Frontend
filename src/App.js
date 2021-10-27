@@ -37,17 +37,17 @@ function App(props) {
       </Helmet>
       <Header />
       <Layout>
-        <Sider />
+        {mobileMode === false ? <Sider /> : <React.Fragment />}
         <Layout>
           <Layout.Content style={{ margin: '16px' }}>
             <Switch>
               {mainRoutes.map(route => (route.auth ? <PrivateRoute {...route} /> : <Route {...route} />))}
             </Switch>
           </Layout.Content>
-          {mobileMode == false ? <Layout.Footer style={{ textAlign: 'center' }}>FinBot</Layout.Footer> : <React.Fragment />}
+          {mobileMode === false ? <Layout.Footer style={{ textAlign: 'center' }}>FinBot</Layout.Footer> : <React.Fragment />}
         </Layout>
       </Layout>
-      {mobileMode == true && user !== undefined ? <Footer /> : <React.Fragment />}
+      {mobileMode === true && user !== undefined ? <Footer /> : <React.Fragment />}
     </Layout>
   );
 }

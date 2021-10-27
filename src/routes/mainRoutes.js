@@ -5,6 +5,12 @@ import NotFound from 'containers/NotFound';
 import Attachment from 'containers/Attachment';
 import SignOut from 'containers/SignOut';
 import EntryTest from 'containers/EntryTest';
+import Advisory from 'containers/Advisory'
+import Education from 'containers/Education'
+import Me from 'containers/Me'
+import Product from 'containers/Me'
+
+
 
 const mainRoutes = [
   {
@@ -31,20 +37,49 @@ const mainRoutes = [
   {
     path: '/signout',
     name: 'Sign Out',
+    hide: true,
     component: SignOut,
   },
+  {
+    path: '/entrytest',
+    name: 'Entrytest',
+    hide: true,
+    component: EntryTest
+  },
+  {
+    path: '/advisory',
+    name: 'Advisory',
+    hide: false,
+    component: Advisory
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    hide: false,
+    component: Product
+  },
+  {
+    path: '/education',
+    name: 'Education',
+    hide: false,
+    component: Education
+  }
+  ,
+  {
+    path: '/account',
+    name: 'ME',
+    hide: false,
+    component: Me
+  }
+  ,
   {
     path: '',
     name: 'Others',
     icon: 'close-circle',
-    component: NotFound,
-  },
-  {
-    path: '/entrytest',
-    name: 'test',
     hide: true,
-    component: EntryTest
+    component: Board,
   }
+
 ];
 
 export default mainRoutes;

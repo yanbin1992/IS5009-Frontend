@@ -12,9 +12,9 @@ function Header(props) {
 
 
   return (
-    <Layout.Header style={{ height: '48px', lineHeight: '48px', padding: '0 30px' }}>
+    <Layout.Header style={{ height: '60px', lineHeight: '48px', padding: '0 20px' }}>
       <Link to="/">
-        <span style={{ lineHeight: '48px', fontWeight: 'bold', fontSize: 'medium' }}>
+        <span style={{ lineHeight: '62px', fontWeight: 'bold', fontSize: 'medium' }}>
           <Icon type="layout" /> FinBot
         </span>
       </Link>
