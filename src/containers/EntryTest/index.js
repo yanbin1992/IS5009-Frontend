@@ -36,7 +36,7 @@ function EntryTest(props) {
 
   React.useEffect(() => {
     let count = 0
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 8; i++) {
       if (answer[i] === undefined) {
         count += 1
       }
@@ -80,10 +80,6 @@ function EntryTest(props) {
       {
         title: '8',
         content: < TestList value={answer[currentNum]} number={7} onChange={handleChange} />,
-      },
-      {
-        title: '9',
-        content: < TestList value={answer[currentNum]} number={8} onChange={handleChange} />,
       }
     ];
 
@@ -104,7 +100,7 @@ function EntryTest(props) {
     let income = 0
     let experience = 0
     let risk = 0
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 8; i++) {
       if (answer[i] === undefined) {
         message.warning(`Test has not completed`)
         return { incomeLevel, experienceLevel, riskLevel }
@@ -215,20 +211,6 @@ function EntryTest(props) {
         break;
     }
     switch (answer[7]) {
-      case "a":
-        risk += 1
-        break;
-      case "b":
-        risk += 2
-        break;
-      case "c":
-        risk += 3
-        break;
-      case "d":
-        risk += 4
-        break;
-    }
-    switch (answer[8]) {
       case "a":
         risk += 1
         break;
