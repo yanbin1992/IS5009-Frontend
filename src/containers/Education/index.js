@@ -81,7 +81,7 @@ class Education extends React.Component {
           </Col>
         </Row>
         <div className="noob">
-          <><span></span><span>Basic: level 1</span></>
+          <><span></span>Basic: level 1</>
           {
             this.state.gu.map(item => {
               return (

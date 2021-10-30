@@ -15,7 +15,7 @@ function Footer(props) {
 
     return (
         <Layout.Footer style={{ height: '52px', lineHeight: '48px', padding: '0px 0px' }}>
-            <Menu style={{ display: "flex", justifyContent: "space-between", height: '52px' }} theme="dark" mode="horizontal" defaultSelectedKeys={['/']}>
+            <Menu style={{ display: "flex", justifyContent: "space-between", height: '52px', maxHeight: 100 }} theme="dark" mode="horizontal" defaultSelectedKeys={['/']}>
                 {mainRoutes.map((route) => {
                     return ((route.hide || (props.user && route.path === '/signin') || (!props.user && route.path === '/signout')) ?
                         <React.Fragment /> :
