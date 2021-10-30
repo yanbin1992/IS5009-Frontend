@@ -1,27 +1,33 @@
 import produce from 'immer';
-import { POST_TEST_RESULT } from './test.constants';
-import { POST_SIGN_OUT } from 'containers/SignOut/signout.constants';
+import { POST_ENTRY_TEST, POST_ENTRY_TEST_SUCCESS, POST_ENTRY_TEST_FAILURE } from './test.constants';
 
 export const initialState = {
-  testResult: {
-    level
+  entryTest: {
+    level: {
+      income: 0,
+      experience: 0,
+      risk: 0
+    }
   },
 };
 
 /* eslint-disable default-case, no-param-reassign */
-const signInReducer = (state = initialState, action) =>
+const entryTestReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case ON_CHANGE_EMAIL:
-        draft.singInForm.email = action.payload;
+      case POST_ENTRY_TEST:
+        console.log('POST_ENTRY_TEST')
+        draft.entryTest = action.payload.data;
         break;
-      case ON_CHANGE_PASSWORD:
-        draft.singInForm.password = action.payload;
+      case POST_ENTRY_TEST_SUCCESS:
+        console.log('POST_ENTRY_TEST_SUCCESS')
+        draft.entryTest = action.payload.data;
         break;
-      case POST_SIGN_OUT:
-        draft.singInForm = { ...initialState.singInForm };
+      case POST_ENTRY_TEST_FAILURE:
+        console.log('POST_ENTRY_TEST_FAILURE')
+        draft.entryTest = action.payload.data;
         break;
     }
   });
 
-export default signInReducer;
+export default entryTestReducer;

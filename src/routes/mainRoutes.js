@@ -74,7 +74,7 @@ const mainRoutes = [
   }
   ,
   {
-    path: '/account',
+    path: '/me',
     name: 'ME',
     hide: false,
     auth: true,

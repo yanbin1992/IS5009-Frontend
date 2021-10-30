@@ -1,1 +1,5 @@
-export const POST_TEST_RESULT = 'signin/POST_TEST_RESULT';
+export const POST_ENTRY_TEST = 'test/POST_ENTRY_TEST';
+export const POST_ENTRY_TEST_SUCCESS = 'test/POST_ENTRY_TEST_SUCCESS';
+export const POST_ENTRY_TEST_FAILURE = 'test/POST_ENTRY_TEST_FAILURE';
+
+

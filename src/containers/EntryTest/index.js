@@ -1,20 +1,51 @@
-import React from 'react';
 import { Alert } from 'antd';
 import { TestList } from './TestList'
 import { Steps, Button, message, Typography } from 'antd';
+import { makeSelectLevel } from './test.selectors';
+import { postEntryTestAction } from './test.actions';
+import { createStructuredSelector } from 'reselect';
+import { makeSelectUser } from 'global.selectors';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
+import { useInjectSaga } from 'utils/injectSaga';
+import { useInjectReducer } from 'utils/injectReducer';
+import reducer from './test.reducer';
+import saga from './test.saga';
 
-function EntryTest() {
+const key = 'test';
+
+function EntryTest(props) {
+  useInjectReducer({ key, reducer });
+  useInjectSaga({ key, saga });
+
   const { Title } = Typography;
   const { Step } = Steps;
+  console.log(props)
 
   var [answer, setAnswer] = React.useState({})
   const [currentNum, setCurrent] = React.useState(0);
+  const [isTestAll, setIsTestAll] = React.useState(false)
 
   const handleChange = (e) => {
     let newAnswer = { ...answer, [currentNum]: e }
     setAnswer(newAnswer)
   }
+
+  React.useEffect(() => {
+    let count = 0
+    for (let i = 0; i < 8; i++) {
+      if (answer[i] === undefined) {
+        count += 1
+      }
+    }
+    if (count === 0) {
+      setIsTestAll(true)
+    }
+    console.log(count)
+  }, [answer])
 
   const steps =
     [
@@ -49,15 +80,7 @@ function EntryTest() {
       {
         title: '8',
         content: < TestList value={answer[currentNum]} number={7} onChange={handleChange} />,
-      },
-      {
-        title: '9',
-        content: < TestList value={answer[currentNum]} number={8} onChange={handleChange} />,
-      },
-      {
-        title: '10',
-        content: < TestList value={answer[currentNum]} number={9} onChange={handleChange} />,
-      },
+      }
     ];
 
 
@@ -68,6 +91,160 @@ function EntryTest() {
   const prev = () => {
     setCurrent(currentNum - 1);
   };
+
+  const levelCal = (answer) => {
+    let incomeLevel = 0
+    let experienceLevel = 0
+    let riskLevel = 0
+
+    let income = 0
+    let experience = 0
+    let risk = 0
+    for (let i = 0; i < 8; i++) {
+      if (answer[i] === undefined) {
+        message.warning(`Test has not completed`)
+        return { incomeLevel, experienceLevel, riskLevel }
+      }
+    }
+    switch (answer[0]) {
+      case "a":
+        income += 1
+        break;
+      case "b":
+        income += 2
+        break;
+      case "c":
+        income += 3
+        break;
+      case "d":
+        income += 4
+        break;
+    }
+    switch (answer[1]) {
+      case "a":
+        income += 1
+        break;
+      case "b":
+        income += 2
+        break;
+      case "c":
+        income += 3
+        break;
+      case "d":
+        income += 4
+        break;
+    }
+    switch (answer[2]) {
+      case "a":
+        income += 2
+        break;
+      case "b":
+        income += 3
+        break;
+      case "c":
+        income += 4
+        break;
+      case "d":
+        income += 1
+        break;
+    }
+    if (income > 7) {
+      incomeLevel = 1
+    }
+    switch (answer[3]) {
+      case "a":
+        experience += 4
+        break;
+      case "b":
+        experience += 3
+        break;
+      case "c":
+        experience += 2
+        break;
+      case "d":
+        experience += 1
+        break;
+    }
+    switch (answer[4]) {
+      case "a":
+        experience += 1
+        break;
+      case "b":
+        experience += 2
+        break;
+      case "c":
+        experience += 3
+        break;
+      case "d":
+        experience += 4
+        break;
+    }
+    if (experience > 3) {
+      experienceLevel = 1
+    }
+    switch (answer[5]) {
+      case "a":
+        risk += 1
+        break;
+      case "b":
+        risk += 1
+        break;
+      case "c":
+        risk += 0
+        break;
+      case "d":
+        risk += 0
+        break;
+    }
+    switch (answer[6]) {
+      case "a":
+        risk += 1
+        break;
+      case "b":
+        risk += 2
+        break;
+      case "c":
+        risk += 3
+        break;
+      case "d":
+        risk += 4
+        break;
+    }
+    switch (answer[7]) {
+      case "a":
+        risk += 1
+        break;
+      case "b":
+        risk += 2
+        break;
+      case "c":
+        risk += 3
+        break;
+      case "d":
+        risk += 4
+        break;
+    }
+    if (risk / 4 > 2) {
+      riskLevel = 1
+    }
+    message.success(`Processing complete!`)
+    return { incomeLevel, experienceLevel, riskLevel }
+  }
+
+  const handleSubmit = (email) => {
+    const level = levelCal(answer)
+    console.log('handleSubmit', level, email, props)
+
+    const { postEntryTest } = props
+    postEntryTest({
+      email: props.user.email,
+      level: {
+        income: level.incomeLevel,
+        experience: level.experienceLevel,
+        risk: level.riskLevel
+      }
+    })
+  }
 
 
   return (<div style={{ display: "flex" }}><Steps current={currentNum} direction="vertical">
@@ -85,8 +262,8 @@ function EntryTest() {
           </Button>
         )}
         {currentNum === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success(`Processing complete!`)}>
-            Done
+          <Button disabled={isTestAll === false} type="primary" onClick={() => handleSubmit(props.user.email)}>
+            Submit
           </Button>
         )}
         {currentNum > 0 && (
@@ -95,8 +272,26 @@ function EntryTest() {
           </Button>
         )}
       </div></div> </div>)
-
-
 }
 
-export default EntryTest;
+
+
+EntryTest.propTypes = {
+  level: PropTypes.object,
+  postEntryTest: PropTypes.func,
+  user: PropTypes.object,
+};
+
+const mapStateToProps = createStructuredSelector({
+  level: makeSelectLevel(),
+  user: makeSelectUser(),
+});
+
+const mapDispatchToProps = dispatch => ({
+  postEntryTest: (req) => dispatch(postEntryTestAction(req)),
+});
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withConnect, memo)(EntryTest);
+

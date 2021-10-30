@@ -6,6 +6,11 @@ export const initialState = {
     name: '',
     email: '',
     password: '',
+    level: {
+      income: 0,
+      experience: 0,
+      risk: 0
+    }
   },
 };
 

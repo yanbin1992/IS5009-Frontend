@@ -16,14 +16,14 @@ export function TestList(props) {
         props.onChange(e.target.value)
     }
 
-    return <div>
+    return <div style={{ height: "500px" }}>
         <div style={{ marginTop: "20px" }}>
-            <Card title={TestQuestion[props.number].title} extra={<a href="#">More</a>} style={{ width: 300 }}>
+            <Card title={TestQuestion[props.number].title} style={{ width: 300 }}>
                 <p>{TestQuestion[props.number].content}</p>
-                <p>A:{TestQuestion[props.number].a}</p>
-                <p>B:{TestQuestion[props.number].b}</p>
-                <p>C:{TestQuestion[props.number].c}</p>
-                <p>D:{TestQuestion[props.number].d}</p>
+                <p>A: {TestQuestion[props.number].a}</p>
+                <p>B: {TestQuestion[props.number].b}</p>
+                <p>C: {TestQuestion[props.number].c}</p>
+                <p>D: {TestQuestion[props.number].d}</p>
             </Card>
         </div>
         <div style={{ marginTop: "10px", marginBottom: "20px" }}>

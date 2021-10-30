@@ -7,5 +7,6 @@ const makeSelectName = () => createSelector(selectSignUpDomain, substate => subs
 
 const makeSelectEmail = () => createSelector(selectSignUpDomain, substate => substate.signUpForm.email);
 const makeSelectPassword = () => createSelector(selectSignUpDomain, substate => substate.signUpForm.password);
+const makeSelectLevel = () => createSelector(selectSignUpDomain, substate => substate.signUpForm.level);
 
-export { selectSignUpDomain, makeSelectName, makeSelectEmail, makeSelectPassword };
+export { selectSignUpDomain, makeSelectName, makeSelectEmail, makeSelectPassword, makeSelectLevel };

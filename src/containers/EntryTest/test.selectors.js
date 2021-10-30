@@ -1,17 +1,12 @@
 import { createSelector } from 'reselect';
 import { initialState } from './test.reducer';
 
-const selectSignInDomain = state => state.test || initialState;
+const selectEntryTestDomain = state => state.entryTest || initialState;
 
-const makeSelectEmail = () =>
+const makeSelectLevel = () =>
   createSelector(
-    selectSignInDomain,
-    substate => substate.singInForm.email,
-  );
-const makeSelectPassword = () =>
-  createSelector(
-    selectSignInDomain,
-    substate => substate.singInForm.password,
+    selectEntryTestDomain,
+    substate => substate.entryTest.level,
   );
 
-export { selectSignInDomain, makeSelectEmail, makeSelectPassword };
+export { selectEntryTestDomain, makeSelectLevel };

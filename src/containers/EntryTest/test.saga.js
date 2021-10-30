@@ -1,25 +1,24 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 
-import { POST_SIGN_IN_REQUEST } from './test.constants';
-import { postSignInAPI } from './test.api';
-import { postSignInSuccess, postSignInFailure } from './test.actions';
-import { makeSelectEmail, makeSelectPassword } from './test.selectors';
+import { POST_ENTRY_TEST } from './test.constants';
+import { postEntryTestAPI } from './test.api';
+import { postEntryTestAction, postEntryTestSuccess, postEntryTestFailure } from './test.actions';
+import { selectEntryTestDomain, makeSelectLevel } from './test.selectors';
 
-export function* postSignInSaga() {
-  const email = yield select(makeSelectEmail());
-  const password = yield select(makeSelectPassword());
-
+export function* postEntryTestSaga(payload) {
+  const { email, level } = payload.payload
+  console.log('saga payload', payload)
   try {
-    const user = yield call(postSignInAPI, { email, password });
-    console.log(user)
-    yield put(postSignInSuccess(user));
-    yield put(push('/'));
+    const resultLevel = yield call(postEntryTestAPI, { email, level });
+    console.log(resultLevel)
+    yield put(postEntryTestSuccess(resultLevel));
+    yield put(push('/account'));
   } catch (error) {
-    yield put(postSignInFailure(error));
+    yield put(postEntryTestFailure(error));
   }
 }
 
-export default function* signInSaga() {
-  yield takeLatest(POST_SIGN_IN_REQUEST, postSignInSaga);
+export default function* entryTestSaga() {
+  yield takeLatest(POST_ENTRY_TEST, postEntryTestSaga);
 }

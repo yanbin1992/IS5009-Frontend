@@ -4,15 +4,16 @@ import { push } from 'connected-react-router';
 import { POST_SIGN_UP_REQUEST } from './signup.constants';
 import { postSignUpAPI } from './signup.api';
 import { postSignUpSuccess, postSignUpFailure } from './signup.actions';
-import { makeSelectName, makeSelectEmail, makeSelectPassword } from './signup.selectors';
+import { makeSelectName, makeSelectEmail, makeSelectPassword, makeSelectLevel } from './signup.selectors';
 
 export function* postSignUpSaga() {
   const name = yield select(makeSelectName());
   const email = yield select(makeSelectEmail());
   const password = yield select(makeSelectPassword());
+  const level = yield select(makeSelectLevel())
 
   try {
-    const user = yield call(postSignUpAPI, { name, email, password });
+    const user = yield call(postSignUpAPI, { name, email, password, level });
 
     yield put(postSignUpSuccess(user));
     yield put(push('/entrytest'));
