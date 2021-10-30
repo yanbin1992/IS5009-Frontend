@@ -1,6 +1,7 @@
 import React from 'react';
 import './Classroom.scss';
 import { Row, Col, Statistic } from 'antd';
+import { getHeight } from "Helper/LayoutHelper"
 class Education extends React.Component {
   constructor(prpos) {
     super(prpos)
@@ -70,7 +71,7 @@ class Education extends React.Component {
   }
   render() {
     return (
-      <div className="cl">
+      <div className="cl" style={{ maxHeight: getHeight() - 60 - 45 - 50, overflowY: "scroll" }}>
         <Row gutter={16}>
           <br />
           <Col span={12} style={{ textAlign: 'center' }}>

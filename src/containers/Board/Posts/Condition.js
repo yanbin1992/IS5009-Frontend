@@ -21,7 +21,7 @@ class Condition extends React.Component {
                                 <p className="essay">
                                     <h3>{item.titles}</h3>
                                     <span>{item.content}<br /><br /></span>
-                                    <img src={item.pic} className="tx" alt="gushi" style={{ height: '100%', width: '100%' }} />
+                                    <img src={item.pic} className="tx" alt="gushi" style={{ height: '100%', width: '300px' }} />
                                 </p>
                             </div>
                         )
