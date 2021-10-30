@@ -13,7 +13,7 @@ export function* postEntryTestSaga(payload) {
     const resultLevel = yield call(postEntryTestAPI, { email, level });
     console.log(resultLevel)
     yield put(postEntryTestSuccess(resultLevel));
-    yield put(push('/account'));
+    yield put(push('/me'));
   } catch (error) {
     yield put(postEntryTestFailure(error));
   }

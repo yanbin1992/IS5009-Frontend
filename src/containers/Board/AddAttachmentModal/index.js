@@ -14,7 +14,6 @@ import {
 } from '../board.actions';
 
 function AddAttachmentModal(props) {
-  console.log('AddAttachmentModal>>>', props);
   return (
     <Modal
       title="Select an attachment"
