@@ -11,14 +11,10 @@ export function TestList(props) {
         setValue(props.value)
     }, [props.value])
 
-
     const hundleChange = (e) => {
         setValue(setValue)
         props.onChange(e.target.value)
     }
-
-
-
 
     return <div>
         <div style={{ marginTop: "20px" }}>

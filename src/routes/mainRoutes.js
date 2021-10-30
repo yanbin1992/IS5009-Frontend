@@ -8,7 +8,7 @@ import EntryTest from 'containers/EntryTest';
 import Advisory from 'containers/Advisory'
 import Education from 'containers/Education'
 import Me from 'containers/Me'
-import Product from 'containers/Me'
+import Account from 'containers/Account'
 
 
 
@@ -44,24 +44,32 @@ const mainRoutes = [
     path: '/entrytest',
     name: 'Entrytest',
     hide: true,
+    auth: true,
+    permission: 'admin',
     component: EntryTest
   },
   {
     path: '/advisory',
     name: 'Advisory',
     hide: false,
+    auth: true,
+    permission: 'admin',
     component: Advisory
   },
   {
-    path: '/product',
-    name: 'Product',
+    path: '/account',
+    name: 'Account',
     hide: false,
-    component: Product
+    auth: true,
+    permission: 'admin',
+    component: Account
   },
   {
     path: '/education',
     name: 'Education',
     hide: false,
+    auth: true,
+    permission: 'admin',
     component: Education
   }
   ,
@@ -69,6 +77,8 @@ const mainRoutes = [
     path: '/account',
     name: 'ME',
     hide: false,
+    auth: true,
+    permission: 'admin',
     component: Me
   }
   ,
