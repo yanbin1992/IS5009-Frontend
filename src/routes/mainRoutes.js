@@ -18,7 +18,7 @@ const mainRoutes = [
     path: '/',
     name: 'Home',
     icon: 'home',
-    component: Board,
+    component: Advisory,
     auth: true,
     hide: true,
     permission: 'admin',
@@ -93,7 +93,7 @@ const mainRoutes = [
     name: 'Others',
     icon: 'close-circle',
     hide: true,
-    component: Board,
+    component: Advisory,
   }
 
 ];

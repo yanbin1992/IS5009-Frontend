@@ -42,8 +42,8 @@ function Board(props) {
   return (
     <>
       <Helmet>
-        <title>Summary</title>
-        <meta name="Task" content="Task Summary" />
+        <title>Community</title>
+        <meta name="Task" content="Community" />
       </Helmet>
       <div style={{ marginLeft: 16 }}>
         <p style={{ width: '6rem', height: '4rem', display: "inline" }}>

@@ -13,7 +13,7 @@ function PostTable(props) {
   /* ------------------ */
   const columns = [
     {
-      title: 'Check',
+      title: 'Mark',
       dataIndex: 'checkbox',
       key: 'checkbox',
       render: (value, record, index) => (
