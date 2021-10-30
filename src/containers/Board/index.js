@@ -20,6 +20,7 @@ import saga from './board.saga';
 import WritePostModal from './WritePostModal';
 import AddAttachmentModal from './AddAttachmentModal';
 import PostTable from './PostTable';
+import Condition from './Posts/Condition';
 // import ShowTable from './ShowTable';
 
 const key = 'board';
@@ -62,6 +63,8 @@ function Board(props) {
           Add
         </Button>
       </div>
+      <Condition />
+      <AddAttachmentModal />
     </>
   );
 }

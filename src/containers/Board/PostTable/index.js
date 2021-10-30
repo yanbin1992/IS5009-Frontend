@@ -13,7 +13,7 @@ function PostTable(props) {
   /* ------------------ */
   const columns = [
     {
-      title: 'CheckBox',
+      title: 'Check',
       dataIndex: 'checkbox',
       key: 'checkbox',
       render: (value, record, index) => (
@@ -32,14 +32,14 @@ function PostTable(props) {
       key: 'title',
     },
     {
-      title: 'Description',
+      title: 'Content',
       dataIndex: 'description',
       key: 'description',
       render: text => <pre style={{ marginBottom: 0, maxHeight: 100 }}>{text}</pre>,
-      responsive: ['sm'],
+      //  responsive: ['sm'],
     },
     {
-      title: 'Attachment',
+      title: 'Attach',
       dataIndex: 'attachment',
       key: 'attachment',
       render: (value, record) => renderAttachmentButton(value, record.id),
