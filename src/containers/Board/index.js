@@ -22,7 +22,9 @@ import AddAttachmentModal from './AddAttachmentModal';
 import PostTable from './PostTable';
 import Condition from './Posts/Condition';
 // import ShowTable from './ShowTable';
-
+import {
+  EditOutlined
+} from '@ant-design/icons';
 const key = 'board';
 
 function Board(props) {
@@ -43,9 +45,10 @@ function Board(props) {
         <title>Summary</title>
         <meta name="Task" content="Task Summary" />
       </Helmet>
-
-      <div style={{ 'margin-left': '40px', 'margin-bottom': '10px' }}>
-        <h1 style={{ 'font-size': 'x-large' }}> All TO-DO </h1>
+      <div style={{ marginLeft: 16 }}>
+        <p style={{ width: '6rem', height: '4rem', display: "inline" }}>
+          <Button type="primary" onClick={props.handleModalShow}>
+            <EditOutlined style={{ fontSize: '18px', display: "inline" }} />Write your post</Button></p>
       </div>
 
       <Row>
@@ -58,11 +61,6 @@ function Board(props) {
 
       <WritePostModal />
       <AddAttachmentModal />
-      <div style={{ marginBottom: 16 }}>
-        <Button type="primary" onClick={props.handleModalShow}>
-          Add
-        </Button>
-      </div>
       <Condition />
       <AddAttachmentModal />
     </>

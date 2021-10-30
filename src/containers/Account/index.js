@@ -9,6 +9,7 @@ function EntryTest() {
       <div>
         <Col className="gutter-row" md={12}>
           <div className="gutter-box">
+
             <Card bordered={false}>
               <div className="pb-m">
                 <h3>Financial Health Overlook</h3>
@@ -52,18 +53,7 @@ function EntryTest() {
                   <h3>Current Assets Allocation</h3>
                   <div className="site-statistic-demo-card">
                     <Row gutter={16}>
-                      <Col span={100}>
-                        <Card>
-                          <Statistic
-                            title="Active"
-                            value={11.28}
-                            precision={2}
-                            valueStyle={{ color: '#3f8600' }}
-                            prefix={<ArrowUpOutlined />}
-                            suffix="%"
-                          />
-                        </Card>
-                      </Col>
+
                     </Row>
                   </div>
                 </div>
