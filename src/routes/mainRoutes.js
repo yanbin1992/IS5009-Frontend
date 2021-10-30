@@ -20,6 +20,7 @@ const mainRoutes = [
     icon: 'home',
     component: Board,
     auth: true,
+    hide: true,
     permission: 'admin',
   },
   {
@@ -72,7 +73,12 @@ const mainRoutes = [
     permission: 'admin',
     component: Education
   }
-  ,
+  , {
+    path: '/community',
+    name: 'Community',
+    icon: 'home',
+    component: Board,
+  },
   {
     path: '/me',
     name: 'ME',
