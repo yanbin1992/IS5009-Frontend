@@ -17,15 +17,15 @@ const entryTestReducer = (state = initialState, action) =>
     switch (action.type) {
       case POST_ENTRY_TEST:
         console.log('POST_ENTRY_TEST')
-        // draft.entryTest.level = action.payload;
+        draft.entryTest = action.payload.data;
         break;
       case POST_ENTRY_TEST_SUCCESS:
         console.log('POST_ENTRY_TEST_SUCCESS')
-        // draft.entryTest.level = action.payload;
+        draft.entryTest = action.payload.data;
         break;
       case POST_ENTRY_TEST_FAILURE:
         console.log('POST_ENTRY_TEST_FAILURE')
-        // draft.entryTest.level = action.payload;
+        draft.entryTest = action.payload.data;
         break;
     }
   });
