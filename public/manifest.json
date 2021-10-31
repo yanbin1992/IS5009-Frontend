@@ -1,9 +1,9 @@
 {
-  "short_name": "React Ant Design",
-  "name": "Create React Ant Design Boilerplate",
+  "short_name": "IS5009 Final Project",
+  "name": "IS5009 Final Project -- NUS",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Finbot_Icon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

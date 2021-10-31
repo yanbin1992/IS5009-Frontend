@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Row, Col, Button } from 'antd';
+import { getHeight, getWidth } from "Helper/LayoutHelper"
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
@@ -31,6 +32,15 @@ function Board(props) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
+  const [height, setHeight] = React.useState(window.innerHeight)
+  const [width, setWidth] = React.useState(window.innerWidth)
+
+  const onResize = () => {
+    setHeight(getHeight())
+    setWidth(getWidth())
+  }
+  window.addEventListener('resize', onResize);
+
   useEffect(() => {
     props.getPosts();
   }, []);
@@ -42,27 +52,29 @@ function Board(props) {
   return (
     <>
       <Helmet>
-        <title>Summary</title>
-        <meta name="Task" content="Task Summary" />
+        <title>Community</title>
+        <meta name="Task" content="Community" />
       </Helmet>
-      <div style={{ marginLeft: 16 }}>
-        <p style={{ width: '6rem', height: '4rem', display: "inline" }}>
-          <Button type="primary" onClick={props.handleModalShow}>
-            <EditOutlined style={{ fontSize: '18px', display: "inline" }} />Write your post</Button></p>
+      <div style={{ maxHeight: height - 60 - 45 - 80, overflowY: "scroll" }}>
+        <div style={{ marginLeft: 16 }}>
+          <p style={{ width: '6rem', height: '4rem', display: "inline" }}>
+            <Button type="primary" onClick={props.handleModalShow}>
+              <EditOutlined style={{ fontSize: '18px', display: "inline" }} />Write your post</Button></p>
+        </div>
+
+        <Row>
+          <Col span={24}>
+            <PostTable onCheckboxChange={props.onChangeCheckbox} onAttachButtonClick={props.handleAttachmentModalShow} />
+          </Col>
+        </Row>
+
+        {/* <ShowTable /> */}
+
+        <WritePostModal />
+        <AddAttachmentModal />
+        <Condition />
+        <AddAttachmentModal />
       </div>
-
-      <Row>
-        <Col span={24}>
-          <PostTable onCheckboxChange={props.onChangeCheckbox} onAttachButtonClick={props.handleAttachmentModalShow} />
-        </Col>
-      </Row>
-
-      {/* <ShowTable /> */}
-
-      <WritePostModal />
-      <AddAttachmentModal />
-      <Condition />
-      <AddAttachmentModal />
     </>
   );
 }

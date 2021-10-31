@@ -13,7 +13,7 @@ function PostTable(props) {
   /* ------------------ */
   const columns = [
     {
-      title: 'Read',
+      title: 'Mark',
       dataIndex: 'checkbox',
       key: 'checkbox',
       render: (value, record, index) => (
@@ -35,8 +35,11 @@ function PostTable(props) {
       title: 'Content',
       dataIndex: 'description',
       key: 'description',
-      //render: More</Button>
-      render: text => <pre style={{ marginBottom: 0, maxHeight: 100 }}>{text}</pre>,
+      render: text => (
+        <pre style={{ marginBottom: 0, maxHeight: 150, maxWidth: '100px', wordBreak: 'normal' }}>
+          {text}
+        </pre>
+      ),
       //  responsive: ['sm'],
     },
     {
