@@ -18,6 +18,26 @@ const key = 'signup';
 function SignUp(props) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
+  const [checkPassword, setCheckPassword] = React.useState('');
+  const [isPasswordPass, setIsPassworkPass] = React.useState(false);
+
+  const firstPassword = React.useMemo(() => {
+    if (props.password === checkPassword) {
+      setIsPassworkPass(true);
+    } else {
+      setIsPassworkPass(false);
+    }
+    return props.password;
+  }, [props.password]);
+
+  const onCheckPassword = e => {
+    setCheckPassword(e.target.value);
+    if (firstPassword === e.target.value) {
+      setIsPassworkPass(true);
+    } else {
+      setIsPassworkPass(false);
+    }
+  };
 
   return (
     <>
@@ -55,8 +75,27 @@ function SignUp(props) {
           value={props.password}
         />
       </div>
+      <div style={{ marginBottom: 16 }}>
+        <Input.Password
+          prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          placeholder="Password Confirm"
+          size="large"
+          onChange={onCheckPassword}
+          value={checkPassword}
+        />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Age" size="large" />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <Input
+          prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          placeholder="Occupation"
+          size="large"
+        />
+      </div>
       <Space>
-        <Button type="primary" onClick={props.postSignUp}>
+        <Button disabled={!isPasswordPass} type="primary" onClick={props.postSignUp}>
           Register
         </Button>
       </Space>

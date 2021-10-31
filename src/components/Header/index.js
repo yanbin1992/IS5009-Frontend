@@ -14,6 +14,7 @@ function Header(props) {
   return (
     <Layout.Header style={{ height: '60px', lineHeight: '48px', padding: '0 20px' }}>
       <Link to="/">
+        <img src={"./Finbot_Icon.png"} style={{ height: '45px'}}/>
         <span style={{ lineHeight: '62px', fontWeight: 'bold', fontSize: 'medium' }}>
           <Icon type="layout" /> FinBot
         </span>
