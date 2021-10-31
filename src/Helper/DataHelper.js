@@ -146,10 +146,10 @@ export const piechartdata = [[{ value: 97000, name: 'Deposit' },
 { value: 40200, name: 'Fund' }]]
 
 export const bankproductdata = [
-  { name: "DBS Multiplier Account", pic: require('../imgs/Products/DBS.png'), baserate: "0.05%", maxrate: "3.8%", minbalance: "S$3,000", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
-  { name: "OCBC 360 Account", pic: require('../imgs/Products/OCBC.jpg'), baserate: "0.05%", maxrate: "4.4%", minbalance: "S$3,000", desc: "OCBC 360 is a savings account with a base interest rate of 0.05%, S$1,000 deposit for account opening, and a S$3,000 minimum monthly balance to which a S$2 fall below fee applies. OCBC 360 interest rates updated to reflect new terms and conditions from 1 October 2020" },
-  { name: "Standard Chartered Bonus$aver Account", pic: require('../imgs/Products/Standard_Chartered_logo.jpg'), baserate: "0.01%", maxrate: "2.38%", minbalance: "S$3,000", desc: "Standard Chartered Bonus$aver is a savings account with base interest rate of 0.03% and bonus interest up to 2.88%. Minimum balance is S$3,000 and a fall below fee of S$5 applies. Standard Chartered Bonus$aver interest rates updated to reflect new changes from 1 October 2020" },
-  { name: "Maybank SaveUp Programme", pic: require('../imgs/Products/Maybank.png'), baserate: "0.1875%", maxrate: "3.0625%", minbalance: "S$1,000", desc: "Maybank SaveUp Programme is a good savings deposit account which offers 0.1875% base interest rate. Bonus interest rate increases according to your credit card spend, home loan, investments, or insurance, capped at a maximum of 3.0625%. Rates updated to reflect 2020 new changes" },
+  { name: "DBS Multiplier", spec: "High rate", pic: require('../imgs/Products/DBS.png'), baserate: "0.05%", maxrate: "3.8%", minbalance: "S$3,000", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
+  { name: "OCBC 360", pic: require('../imgs/Products/OCBC.jpg'), baserate: "0.05%", maxrate: "4.4%", minbalance: "S$3,000", desc: "OCBC 360 is a savings account with a base interest rate of 0.05%, S$1,000 deposit for account opening, and a S$3,000 minimum monthly balance to which a S$2 fall below fee applies. OCBC 360 interest rates updated to reflect new terms and conditions from 1 October 2020" },
+  { name: "Standard Chartered BonusSaver", pic: require('../imgs/Products/Standard_Chartered_logo.jpg'), baserate: "0.01%", maxrate: "2.38%", minbalance: "S$3,000", desc: "Standard Chartered Bonus$aver is a savings account with base interest rate of 0.03% and bonus interest up to 2.88%. Minimum balance is S$3,000 and a fall below fee of S$5 applies. Standard Chartered Bonus$aver interest rates updated to reflect new changes from 1 October 2020" },
+  { name: "Maybank SaveUp", pic: require('../imgs/Products/Maybank.png'), baserate: "0.1875%", maxrate: "3.0625%", minbalance: "S$1,000", desc: "Maybank SaveUp Programme is a good savings deposit account which offers 0.1875% base interest rate. Bonus interest rate increases according to your credit card spend, home loan, investments, or insurance, capped at a maximum of 3.0625%. Rates updated to reflect 2020 new changes" },
 ]
 export const Timeproductdata = [
   { name: "DBS SGD fixed deposit", pic: require('../imgs/Products/DBS.png'), mindeposit: "S$1,000", tenure: "1 to 60 months", rate: "0.6%", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
@@ -157,7 +157,7 @@ export const Timeproductdata = [
   { name: "ICBC SGD fixed deposit", pic: require('../imgs/Products/ICBC.jpg'), mindeposit: "S$1,000", tenure: "12 months", rate: "0.6%", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
 ]
 export const fundproductdata = [
-  { name: "Nikko AM STI ETF (SGX: G3B)", pic: require('../imgs/Products/DBS.png'), yield: "4.72% ", expense: " 0.3%", NAV: "S$3.2698", foundsize: "S$607.26 M", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
+  { name: "Nikko AM STI ETF (SGX: G3B)", pic: require('../imgs/Products/SPDR_ETF.png'), yield: "4.72% ", expense: " 0.3%", NAV: "S$3.2698", foundsize: "S$607.26 M", desc: "DBS Multiplier is a good savings deposit account which offers 0.05% base interest rate. Bonus interest rate increases according to your DBS credit card spend, home loan, investments, or insurance, capped at a maximum of 3.80%. Rates updated to reflect 2020 new changes" },
   { name: "SPDR S&P 500 ETF (SGX: S27)", pic: require('../imgs/Products/CIMB.png'), yield: "16.48%", expense: "0.0945%", NAV: "$458.3", foundsize: "$415,328.35 M", desc: "OCBC 360 is a savings account with a base interest rate of 0.05%, S$1,000 deposit for account opening, and a S$3,000 minimum monthly balance to which a S$2 fall below fee applies. OCBC 360 interest rates updated to reflect new terms and conditions from 1 October 2020" },
 ]
 export const insuranceproductdata = [
@@ -177,4 +177,6 @@ export const TestQuestion = [
   { title: "Question 8", content: "What is the biggest investment loss you think you can bear?", a: "Within 10%", b: "10% - 30%", c: "30% - 50%", d: "More than 50%" }
 
 ]
+
+
 

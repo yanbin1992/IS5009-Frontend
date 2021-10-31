@@ -13,7 +13,7 @@ import mainRoutes from 'routes/mainRoutes';
 import Footer from 'components/Footer';
 import { isMobile } from 'Helper/DeviceHelper';
 import { compose } from 'redux';
-
+import './iconfont/iconfont.css'
 
 function App(props) {
 
