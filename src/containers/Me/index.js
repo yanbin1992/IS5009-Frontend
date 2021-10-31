@@ -28,30 +28,30 @@ function Me(props) {
   const educationData = {
     titles: 'Investment methods',
     title: 'Investment rules, how to invest, how to throw',
-    img: require('../Education/investment.webp'),
+    img: require('../../imgs/investment.webp'),
   };
 
   const communityData = React.useMemo(
     () =>
       props.postList.length > 0
         ? {
-            id: props.postList[props.postList.length - 1].id,
-            img: `https://joeschmoe.io/api/v1/${props.user.id}`,
-            pic: `${instance.defaults.baseURL}/v1/posts/attachment/${props.postList[props.postList.length - 1].id}`,
-            content: props.postList[props.postList.length - 1].description,
-            titles: props.postList[props.postList.length - 1].title,
-            checkbox: props.postList[props.postList.length - 1].checkbox,
-            date: props.postList[props.postList.length - 1].createdAt.slice(0, 10),
-            time: props.postList[props.postList.length - 1].createdAt.slice(11, 16),
-          }
+          id: props.postList[props.postList.length - 1].id,
+          img: `https://joeschmoe.io/api/v1/${props.user.id}`,
+          pic: `${instance.defaults.baseURL}/v1/posts/attachment/${props.postList[props.postList.length - 1].id}`,
+          content: props.postList[props.postList.length - 1].description,
+          titles: props.postList[props.postList.length - 1].title,
+          checkbox: props.postList[props.postList.length - 1].checkbox,
+          date: props.postList[props.postList.length - 1].createdAt.slice(0, 10),
+          time: props.postList[props.postList.length - 1].createdAt.slice(11, 16),
+        }
         : {
-            id: 1,
-            title: 'user001',
-            titles: 'Taper will be completed in the middle of next year. ',
-            img: `https://joeschmoe.io/api/v1/random`,
-            pic: 'https://pubimg.futunn.com/201907270121186410c350a87d4.jpg',
-            time: '21:15',
-          },
+          id: 1,
+          title: 'user001',
+          titles: 'Taper will be completed in the middle of next year. ',
+          img: `https://joeschmoe.io/api/v1/random`,
+          pic: 'https://pubimg.futunn.com/201907270121186410c350a87d4.jpg',
+          time: '21:15',
+        },
     [props.postList],
   );
 
@@ -161,7 +161,7 @@ function Me(props) {
     },
   ];
   return (
-    <div style={{ maxHeight: height - 60 - 45 -50, width: width, overflowY: 'scroll' }}>
+    <div style={{ maxHeight: height - 60 - 45 - 50, width: width, overflowY: 'scroll' }}>
       <List>
         <List.Item style={{ width: width - 50 }}>
           <div>

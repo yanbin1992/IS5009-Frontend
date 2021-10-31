@@ -65,15 +65,15 @@ class Advisor extends Component {
                     </Button>
                     <br />
                     {this.state.plan == 1 ? <div><h4>Monthly invest allocation</h4>
-                        <Image width={300} src={require('./advData/plan1.png')} /></div> :
+                        <Image width={300} src={require('./advData/plan0.png')} /></div> :
                         this.state.plan == 2 ? <div><h4>Monthly invest allocation</h4>
-                            <Image width={300} src={require('./advData/plan2.png')} /></div> :
+                            <Image width={300} src={require('./advData/plan1.png')} /></div> :
                             this.state.plan == 3 ? <div><h4>Monthly invest allocation</h4>
-                                <Image width={300} src={require('./advData/plan3.png')} /></div> :
+                                <Image width={300} src={require('./advData/plan2.png')} /></div> :
                                 this.state.plan == 4 ? <div><h4>Monthly invest allocation</h4>
-                                    <Image width={300} src={require('./advData/plan4.png')} /></div> :
+                                    <Image width={300} src={require('./advData/plan3.png')} /></div> :
                                     this.state.plan == 5 ? <div><h4>Monthly invest allocation</h4>
-                                        <Image width={300} src={require('./advData/plan5.png')} /></div> : null}
+                                        <Image width={300} src={require('./advData/plan4.png')} /></div> : null}
                     <br />
                     {this.state.plan != 0 ? <div>
                         <h4>Recommended Products</h4>

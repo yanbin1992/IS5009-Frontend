@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Image } from 'antd';
 class Plan extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: "",
+        };
+    }
+    changeText() {
+        this.setState({ show: 1 });
+        console.log(this.state.show);
+    }
     render() {
         return (
             <div className="Plan">
@@ -22,8 +31,15 @@ class Plan extends Component {
                     <Form.Item label="In year:       " name="layout">
                         <Input style={{ marginLeft: 10, width: '6rem' }} />
                     </Form.Item>
-                    <Button style={{ marginBottom: 10 }}>Add Items</Button>
-                    <Button type="primary" style={{ marginLeft: 60, width: '6rem', marginBottom: 10 }}>Submit</Button>
+                    <Button type="primary" style={{ marginBottom: 10 }} onClick={this.changeText.bind(this)}>Submit</Button>
+                    <br />
+                    {this.state.show == 1 ?
+                        <div><Image
+                            width={300}
+                            src={require('./advData/plangoal.png')}
+                        />
+                        </div>
+                        : null}
                 </div>
             </div>
         )
