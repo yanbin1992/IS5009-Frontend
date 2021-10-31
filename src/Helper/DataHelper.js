@@ -178,5 +178,66 @@ export const TestQuestion = [
 
 ]
 
+export const courselevel1 = [
+  {
+    id: 1,
+    titles: 'Stock investment basis',
+    title: 'Transaction rules, how to trade and how to charge',
+    img: require('../imgs/tz.jpg'),
+  },
+  {
+    id: 2,
+    titles: 'Basic knowledge of investment',
+    title: 'How to see the right time to start the stock',
+    img: require('../imgs/tz2.jpg'),
+  },
+  {
+    id: 3,
+    titles: 'How to save accounts',
+    title: 'learn how to save',
+    img: require('../imgs/savings-accounts.jpg'),
+  }
+]
+
+export const courselevel2 = [
+  {
+    id: 1,
+    titles: 'Investment methods',
+    title: 'Investment rules, how to invest, how to throw',
+    img: require('../imgs/investment.webp'),
+  },
+  {
+    id: 2,
+    titles: 'Distinguish good and bad',
+    title: 'How to seize the stock at the right time',
+    img: require('../imgs/Investment2.jpeg'),
+  }, {
+    id: 3,
+    titles: 'How to investment well',
+    title: 'Methods of investment',
+    img: require('../imgs/Investments.jpg'),
+  }, {
+    id: 4,
+    titles: 'ETF',
+    title: 'Something about ETF',
+    img: require('../imgs/ETF.png'),
+  }
+
+]
+export const courselevel3 = [
+  {
+    id: 1,
+    titles: 'Risk Management',
+    title: 'Risk Management',
+    img: require('../imgs/Risk Management.jpg'),
+  },
+  {
+    id: 2,
+    titles: 'Advanced Risk Management',
+    title: 'More Risk Management',
+    img: require('../imgs/Advanced Risk Manaagement.jpg'),
+  }
+]
+
 
 
