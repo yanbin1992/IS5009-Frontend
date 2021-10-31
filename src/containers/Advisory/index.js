@@ -3,14 +3,14 @@ import React from 'react';
 import Header from './header';
 // 
 import { withRouter } from 'react-router-dom'
-
+import { getHeight } from "Helper/LayoutHelper"
 
 
 class Advisory extends React.Component {
   render() {
     console.log(this.props)
     return (
-      <div style={{ marginLeft: "0", backgroundColor: "#fff" }}>
+      <div style={{ backgroundColor: "#fff", margin: "-16px", maxHeight: getHeight() - 60 - 45 - 50, overflowY: "scroll" }}>
         <Header />
       </div>
     )

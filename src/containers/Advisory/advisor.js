@@ -41,7 +41,7 @@ class Advisor extends Component {
         return (
             <div className="Advisor">
                 <div style={{ marginTop: 32, marginLeft: 20, marginBottom: 16 }}>
-                    <h4>Please input your monthly investment amount:</h4>
+                    <h4>Please input your monthly investment amount(SGD):</h4>
                     <div>
                         <input
                             value={this.state.InputValue}
@@ -76,16 +76,18 @@ class Advisor extends Component {
                                         <Image width={300} src={require('./advData/plan5.png')} /></div> : null}
                     <br />
                     {this.state.plan != 0 ? <div>
-                        <h4>Banking Saving Account Products</h4>
+                        <h4>Recommended Products</h4>
                         <>Banking Saving Account Products</>
-                        <Image width={300} src={require('./advData/pro1.png')} />
+                        <Image width={310} src={require('./advData/pro1.png')} />
                         <br />
                         <>Banking Time Deposit Products</>
-                        <Image width={300} src={require('./advData/pro2.png')} />
+                        <Image width={310} src={require('./advData/pro2.png')} />
+                        <br />
                         <>Fund Products</>
-                        <Image width={300} src={require('./advData/pro3.png')} />
+                        <Image width={310} src={require('./advData/pro3.png')} />
+                        <br />
                         <>Insurance Products</>
-                        <Image width={300} src={require('./advData/pro4.png')} />
+                        <Image width={310} src={require('./advData/pro4.png')} />
                     </div> :
                         null}
 
