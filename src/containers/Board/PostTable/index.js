@@ -6,6 +6,7 @@ import { compose } from 'redux';
 import { Table, Checkbox, Button } from 'antd';
 import { selectPostList } from '../board.selectors';
 import instance from 'utils/request';
+import { isMobile } from 'Helper/DeviceHelper';
 
 function PostTable(props) {
   /* ------------------ */
@@ -36,7 +37,7 @@ function PostTable(props) {
       dataIndex: 'description',
       key: 'description',
       render: text => (
-        <pre style={{ marginBottom: 0, maxHeight: 150, maxWidth: '100px', wordBreak: 'normal' }}>
+        <pre style={{ marginBottom: 0, maxHeight: 150, maxWidth: isMobile() === true? '100px' : '1000px', wordBreak: 'normal' }}>
           {text}
         </pre>
       ),
