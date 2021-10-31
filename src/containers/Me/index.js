@@ -17,7 +17,19 @@ import { getPostsAction } from '../Board/board.actions';
 function Me(props) {
   const [height, setHeight] = React.useState(window.innerHeight);
   const [width, setWidth] = React.useState(window.innerWidth);
-
+  const userLevel = React.useMemo(() => {
+    if (props.test && props.test.entryTest && props.test.entryTest.level) {
+      return props.test.entryTest.level;
+    } else if (props.user.level) {
+      return props.user.level;
+    } else {
+      return {
+        risk: 0,
+        income: 0,
+        experience: 0,
+      };
+    }
+  }, [props.user, props.test]);
 
   const onResize = () => {
     setHeight(getHeight());
@@ -161,23 +173,50 @@ function Me(props) {
     },
   ];
   return (
-    <div style={{ maxHeight: height - 60 - 45 -50, width: width, overflowY: 'scroll' }}>
-      <List>
-        <List.Item style={{ width: width - 50 }}>
-          <div>
-            <List.Item.Meta
-              avatar={<Avatar src={`https://joeschmoe.io/api/v1/${props.user.id}`} />}
-              title={
-                <Popover placement="right" trigger="click" content={<a href={'/signout'}>{'SignOut'} </a>}>
-                  {props.user.name}
-                </Popover>
-              }
-              description={props.user.email}
-            />
-          </div>
-          {'Thanks for visiting FinBot in IS5009, NUS'}
-        </List.Item>
-      </List>
+    <div style={{ maxHeight: height - 60 - 45 - 50, width: width, overflowY: 'scroll' }}>
+      <div>
+        <List>
+          <List.Item style={{ width: width - 50 }}>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <div style={{ width: "30%",}}>
+              <List.Item.Meta
+                avatar={<Avatar src={`https://joeschmoe.io/api/v1/${props.user.id}`} />}
+                title={
+                  <Popover placement="right" trigger="click" content={<a href={'/signout'}>{'SignOut'} </a>}>
+                    {props.user.name}
+                  </Popover>
+                }
+                description={props.user.email}
+              />
+              </div>
+              <div
+                style={{
+                  width: "60%",
+                  height: '50px',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div style={{ width: '100px', display: 'flex', flexDirection: 'column' }}>
+                  <p style={{marginBottom: 0}}>Income</p>
+                  <p style={{ fontSize: '15px', color: 'green' }}>{userLevel.income === 1 ? 'High' : 'Normal'}</p>
+                </div>
+                <div style={{ width: '100px', display: 'flex', flexDirection: 'column' }}>
+                  <p style={{marginBottom: 0}}>Experience</p>
+                  <p style={{ fontSize: '15px', color: 'green' }}>{userLevel.experience === 1 ? 'High' : 'Normal'}</p>
+                </div>
+                <div style={{ width: '100px', display: 'flex', flexDirection: 'column' }}>
+                  <p style={{marginBottom: 0}}>Risk</p>
+                  <p style={{ fontSize: '15px', color: 'green' }}>{userLevel.risk === 1 ? 'High' : 'Normal'}</p>
+                </div>
+              </div>
+            </div>
+
+            {'Thanks for visiting FinBot in IS5009, NUS'}
+          </List.Item>
+        </List>
+      </div>
       <List
         grid={{ gutter: 16, column: 1 }}
         dataSource={data}
