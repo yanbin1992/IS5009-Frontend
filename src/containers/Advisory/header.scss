@@ -1,0 +1,35 @@
+ul,
+li {
+    list-style: none;
+}
+
+.consult-header {
+    margin-left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+
+    .consult-header-item {
+        display: flex;
+        flex: 1;
+        height: 1.96rem;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: #aaa9a9;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .active {
+        color: #030303 !important;
+       // border-bottom: px solid #488ae1;
+    }
+}
