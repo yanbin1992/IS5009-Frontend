@@ -30,8 +30,8 @@ export const pin = [
     id: 1,
     title: 'user001',
     titles: 'Taper will be completed in the middle of next year. ',
-    img: require('../imgs/investment.webp'),
-    pic: "https://pubimg.futunn.com/201907270121186410c350a87d4.jpg",
+    img: require('../imgs/Community/noavatar.png'),
+    pic: require('../imgs/Community/C4.jpg'),
     time: '21:15',
     content: 'US Federal Reserve Chairman Powell reiterated that he was about to start reducing bond purchases, warning that the recovery was very uneven and that the supply chain bottleneck.'
   },
@@ -39,8 +39,8 @@ export const pin = [
     id: 2,
     title: 'random',
     titles: 'The "new king of debt"',
-    img: require('../imgs/txcs.jpg'),
-    pic: "https://pubimg.futunn.com/201907270121188483b461894a2.jpg",
+    img: require('../imgs/Community/noavatar.png'),
+    pic: require('../imgs/Community/C5.jpg'),
     time: '16:00',
     content: 'High inflation in the United States is not temporary and will remain above 4% next year.'
   },
@@ -48,8 +48,8 @@ export const pin = [
     id: 3,
     title: 'user002',
     titles: 'One week new shares',
-    img: require('../imgs/txcs.jpg'),
-    pic: require('../imgs/txcs.jpg'),
+    img: require('../imgs/Community/noavatar.png'),
+    pic: require('../imgs/Community/C6.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   },
@@ -58,7 +58,7 @@ export const pin = [
     title: 'user802',
     titles: 'One week new shares',
     img: require('../imgs/txcs.jpg'),
-    pic: require('../imgs/ETF.png'),
+    pic: require('../imgs/Community/C7.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
@@ -66,7 +66,7 @@ export const pin = [
     title: 'user002',
     titles: 'One week new shares',
     img: require('../imgs/txcs.jpg'),
-    pic: "https://pubimg.futunn.com/201907260120882692bca10ff54.jpg",
+    pic: require('../imgs/Community/C8.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
@@ -74,15 +74,15 @@ export const pin = [
     title: 'user112',
     titles: 'One week new shares',
     img: require('../imgs/txtwo.jpg'),
-    pic: "https://pubimg.futunn.com/201907260120882692bca10ff54.jpg",
+    pic: require('../imgs/Community/C9.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
     id: 7,
     title: 'user009',
     titles: 'One week new shares',
-    img: require('../imgs/tz.jpg'),
-    pic: "https://pubimg.futunn.com/201907260120882692bca10ff54.jpg",
+    img: require('../imgs/Community/noavatar.png'),
+    pic: require('../imgs/Community/C10.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
@@ -90,7 +90,7 @@ export const pin = [
     title: 'user1234',
     titles: 'One week new shares',
     img: require('../imgs/investment.webp'),
-    pic: "https://pubimg.futunn.com/201907260120882692bca10ff54.jpg",
+    pic: require('../imgs/Community/dhiefc_mobileLarge.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
@@ -98,15 +98,15 @@ export const pin = [
     title: 'user2384',
     titles: 'One week new shares',
     img: require('../imgs/tz.jpg'),
-    pic: "https://pubimg.futunn.com/201907260120882692bca10ff54.jpg",
+    pic: require('../imgs/Community/dhiefc_mobileSmall.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }, {
     id: 10,
     title: 'random109',
     titles: 'One week new shares',
-    img: require('../imgs/tz.jpg'),
-    pic: require('../imgs/txcs.jpg'),
+    img: require('../imgs/Community/noavatar.png'),
+    pic: require('../imgs/Community/dhiefc_mobileXLarge.jpg'),
     time: '15:23',
     content: '"Hong Kong version of Sha county" Tan Zi international will be listed next Thursday'
   }

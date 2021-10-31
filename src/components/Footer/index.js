@@ -25,7 +25,7 @@ function Footer(props) {
                             (!route.permission && props.user) ||
                             (props.user && props.user.permissions.includes(route.permission))
                         ) ? (
-                            <Menu.Item style={{ fontSize: "10px",width:"20%", padding:"0 10px", display:"flex", justifyContent:"center" }} key={route.path || '/notfound'}>
+                            <Menu.Item style={{ fontSize: "10px", width: "20%", padding: "0 10px", display: "flex", justifyContent: "center" }} key={route.path || '/notfound'}>
                                 <Link to={route.path || '/notfound'}>
                                     <span>{route.name}</span>
                                 </Link>

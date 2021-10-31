@@ -71,7 +71,8 @@ class Education extends React.Component {
   }
   render() {
     return (
-      <div className="cl" style={{ maxHeight: getHeight() - 60 - 45 - 50, overflowY: "scroll" }}>
+      <div className="cl" style={{ margin: "-16px", maxHeight: getHeight() - 60 - 45 - 50, overflowY: "scroll" }}>
+        <br />
         <Row gutter={16}>
           <br />
           <Col span={12} style={{ textAlign: 'center' }}>
@@ -81,8 +82,9 @@ class Education extends React.Component {
             <Statistic title="Rewards" value={0} />
           </Col>
         </Row>
+        <br />
         <div className="noob">
-          <><span></span>Basic: level 1</>
+          <div style={{ marginTop: "16px", marginLeft: "10px" }}><h3>Basic: level 1</h3></div>
           {
             this.state.gu.map(item => {
               return (
@@ -98,7 +100,7 @@ class Education extends React.Component {
           }
         </div>
         <div className="noob">
-          <><span></span><span>Intermediate: level 2</span></>
+          <div style={{ marginTop: "16px", marginLeft: "10px" }}><h3>Intermediate: level 2</h3></div>
           {
             this.state.piao.map(item => {
               return (
@@ -114,7 +116,7 @@ class Education extends React.Component {
           }
         </div>
         <div className="noob">
-          <><span></span><span>Advanced: level 3</span></>
+          <div style={{ marginTop: "16px", marginLeft: "10px" }}><h3>Advanced: level 3</h3></div>
           {
             this.state.jiao.map(item => {
               return (
