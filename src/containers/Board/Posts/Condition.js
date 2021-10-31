@@ -1,7 +1,6 @@
 import React from 'react';
 import './Condition.scss';
 import { pin } from "../../../Helper/DataHelper"
-import { Carousel, WingBlank } from 'antd-mobile';
 class Condition extends React.Component {
     render() {
         return (

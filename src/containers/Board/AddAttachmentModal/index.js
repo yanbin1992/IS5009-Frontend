@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { Button, Modal, Input, Icon, Upload } from 'antd';
+import { Button, Modal, Icon, Upload } from 'antd';
 
 import { selectAttachmentModalVisible, selectAttachmentModalLoading, makeSelectAttachment } from '../board.selectors';
 import {

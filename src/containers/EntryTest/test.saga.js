@@ -3,15 +3,12 @@ import { push } from 'connected-react-router';
 
 import { POST_ENTRY_TEST } from './test.constants';
 import { postEntryTestAPI } from './test.api';
-import { postEntryTestAction, postEntryTestSuccess, postEntryTestFailure } from './test.actions';
-import { selectEntryTestDomain, makeSelectLevel } from './test.selectors';
+import { postEntryTestSuccess, postEntryTestFailure } from './test.actions';
 
 export function* postEntryTestSaga(payload) {
   const { email, level } = payload.payload
-  console.log('saga payload', payload)
   try {
     const resultLevel = yield call(postEntryTestAPI, { email, level });
-    console.log(resultLevel)
     yield put(postEntryTestSuccess(resultLevel));
     yield put(push('/me'));
   } catch (error) {

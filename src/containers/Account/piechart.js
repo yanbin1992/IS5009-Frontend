@@ -35,7 +35,6 @@ class piechart extends Component {
         }
       ]
     };
-    //   console.log('alitastate in panel', this.props.alitaState)
     return (
       <div>
         <ReactEcharts

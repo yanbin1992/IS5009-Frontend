@@ -4,7 +4,6 @@ import { Radio, Card } from 'antd'
 
 
 export function TestList(props) {
-    console.log(props)
     const [value, setValue] = React.useState(props.value)
 
     React.useEffect(() => {

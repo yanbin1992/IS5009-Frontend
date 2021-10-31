@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Statistic, Card, Row, Col, Image } from 'antd';
+import { Statistic, Card, Row, Col } from 'antd';
 class Nulldata extends Component {
 
     render() {

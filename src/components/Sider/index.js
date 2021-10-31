@@ -8,7 +8,6 @@ import { Layout, Icon, Menu } from 'antd';
 
 import mainRoutes from 'routes/mainRoutes';
 import { makeSelectUser } from 'global.selectors';
-import { isMobile } from 'Helper/DeviceHelper';
 
 /* eslint-disable indent */
 

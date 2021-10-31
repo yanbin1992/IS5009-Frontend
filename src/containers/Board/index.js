@@ -5,8 +5,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Row, Col, Button } from 'antd';
-import { getHeight, getWidth } from "Helper/LayoutHelper"
-
+import { getHeight } from "Helper/LayoutHelper"
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import {
@@ -33,11 +32,9 @@ function Board(props) {
   useInjectSaga({ key, saga });
 
   const [height, setHeight] = React.useState(window.innerHeight)
-  const [width, setWidth] = React.useState(window.innerWidth)
 
   const onResize = () => {
     setHeight(getHeight())
-    setWidth(getWidth())
   }
   window.addEventListener('resize', onResize);
 

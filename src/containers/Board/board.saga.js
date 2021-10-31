@@ -34,9 +34,7 @@ export function* postPostsSaga() {
 }
 
 export function* postPostsCheckboxSaga({ payload: id }) {
-  console.log('postPostsCheckboxSaga>>>>', id);
   let post = yield select(makeSelectPostsById(id));
-  console.log('postPostsCheckboxSaga>>>>', post);
 
   const { title, description, checkbox } = post;
   try {
@@ -52,7 +50,6 @@ export function* postPostsAttachmentSaga() {
   const attachment = yield select(makeSelectAttachment());
   const id = yield select(makeSelectAttachmentId());
   const post = yield select(makeSelectPostsById(id));
-  console.log('postPostsCheckboxSaga>>>>', id, attachment, post);
 
   try {
     yield call(putPostsAPI, { ...post, attachment: attachment[0] });

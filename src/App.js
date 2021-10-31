@@ -20,7 +20,6 @@ function App(props) {
   const [mobileMode, setMobileMode] = React.useState(true)
 
   const user = React.useMemo(() => {
-    console.log("USER", props.user)
     return props.user
   }, [props.user])
 

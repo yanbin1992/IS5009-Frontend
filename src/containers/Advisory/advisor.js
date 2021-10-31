@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputNumber, Button, Radio, Image } from 'antd';
+import { Button, Radio, Image } from 'antd';
 class Advisor extends Component {
     constructor(props) {
         super(props);
@@ -25,16 +25,15 @@ class Advisor extends Component {
         const { InputValue } = this.state;
         if (InputValue <= 1000) {
             this.setState({ plan: 1 });
-        } else if (InputValue > 1000 && InputValue <= 5000 && (radio == 2 || radio == 1)) {
+        } else if (InputValue > 1000 && InputValue <= 5000 && (radio === 2 || radio === 1)) {
             this.setState({ plan: 2 });
-        } else if (InputValue > 5000 && (radio == 2 || radio == 1)) {
+        } else if (InputValue > 5000 && (radio === 2 || radio === 1)) {
             this.setState({ plan: 3 });
-        } else if (InputValue > 1000 && InputValue <= 5000 && (radio == 3)) {
+        } else if (InputValue > 1000 && InputValue <= 5000 && (radio === 3)) {
             this.setState({ plan: 4 });
         } else {
             this.setState({ plan: 5 });
         }
-        console.log(this.state.plan);
 
     }
     render() {
@@ -64,18 +63,18 @@ class Advisor extends Component {
                         Submit and generate your report
                     </Button>
                     <br />
-                    {this.state.plan == 1 ? <div><h4>Monthly invest allocation</h4>
+                    {this.state.plan === 1 ? <div><h4>Monthly invest allocation</h4>
                         <Image width={300} src={require('./advData/plan1.png')} /></div> :
-                        this.state.plan == 2 ? <div><h4>Monthly invest allocation</h4>
+                        this.state.plan === 2 ? <div><h4>Monthly invest allocation</h4>
                             <Image width={300} src={require('./advData/plan2.png')} /></div> :
-                            this.state.plan == 3 ? <div><h4>Monthly invest allocation</h4>
+                            this.state.plan === 3 ? <div><h4>Monthly invest allocation</h4>
                                 <Image width={300} src={require('./advData/plan3.png')} /></div> :
-                                this.state.plan == 4 ? <div><h4>Monthly invest allocation</h4>
+                                this.state.plan === 4 ? <div><h4>Monthly invest allocation</h4>
                                     <Image width={300} src={require('./advData/plan4.png')} /></div> :
-                                    this.state.plan == 5 ? <div><h4>Monthly invest allocation</h4>
+                                    this.state.plan === 5 ? <div><h4>Monthly invest allocation</h4>
                                         <Image width={300} src={require('./advData/plan5.png')} /></div> : null}
                     <br />
-                    {this.state.plan != 0 ? <div>
+                    {this.state.plan !== 0 ? <div>
                         <h4>Recommended Products</h4>
                         <>Banking Saving Account Products</>
                         <Image width={310} src={require('./advData/pro1.png')} />

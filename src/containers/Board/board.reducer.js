@@ -1,5 +1,4 @@
 import produce from 'immer';
-import { find } from 'lodash';
 import {
   GET_POSTS_SUCCESS,
   HANDLE_MODAL_SHOW,
@@ -73,7 +72,6 @@ const boardReducer = (state = initialState, action) =>
         break;
 
       case HANDLE_ATTACHMENT_MODAL_SHOW:
-        console.log('HANDLE_ATTACHMENT_MODAL_SHOW', action.payload);
         draft.postForm.id = action.payload;
         draft.attachmentModalVisible = true;
         break;

@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 import { compose } from 'redux';
-import { Layout, Icon, Menu } from 'antd';
-import { Switch, Route } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
 import mainRoutes from 'routes/mainRoutes';
 import { makeSelectUser } from 'global.selectors';
-import PrivateRoute from 'components/PrivateRoute';
 
 
 function Footer(props) {

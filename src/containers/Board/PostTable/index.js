@@ -73,7 +73,6 @@ function PostTable(props) {
   };
 
   const renderViewAttachment = id => {
-    console.log('renderViewAttachment>>>', id);
 
     window.open(`${instance.defaults.baseURL}/v1/posts/attachment/${id}`);
     // props.onViewAttachment(props.attachmentPath)

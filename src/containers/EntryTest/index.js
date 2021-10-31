@@ -1,4 +1,3 @@
-import { Alert } from 'antd';
 import { TestList } from './TestList'
 import { Steps, Button, message, Typography } from 'antd';
 import { makeSelectLevel } from './test.selectors';
@@ -23,7 +22,6 @@ function EntryTest(props) {
 
   const { Title } = Typography;
   const { Step } = Steps;
-  console.log(props)
 
   var [answer, setAnswer] = React.useState({})
   const [currentNum, setCurrent] = React.useState(0);
@@ -44,7 +42,6 @@ function EntryTest(props) {
     if (count === 0) {
       setIsTestAll(true)
     }
-    console.log(count)
   }, [answer])
 
   const steps =
@@ -233,7 +230,6 @@ function EntryTest(props) {
 
   const handleSubmit = (email) => {
     const level = levelCal(answer)
-    console.log('handleSubmit', level, email, props)
 
     const { postEntryTest } = props
     postEntryTest({

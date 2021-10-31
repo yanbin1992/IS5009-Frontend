@@ -1,5 +1,4 @@
-import { Alert } from 'antd';
-import { List, Avatar, Card, Popover, Button, Statistic, Badge } from 'antd';
+import { List, Avatar, Card, Popover, Statistic, Badge } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { getHeight, getWidth } from 'Helper/LayoutHelper';
 import { makeSelectLevel } from '../EntryTest/test.selectors';

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, Row, Col, Tag } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { Button, Card, Col, Tag } from 'antd';
 import { bankproductdata } from "../../Helper/DataHelper"
 import { insuranceproductdata } from "../../Helper/DataHelper"
 import { fundproductdata } from "../../Helper/DataHelper"
