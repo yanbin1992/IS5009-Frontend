@@ -75,6 +75,8 @@ const mainRoutes = [
     path: '/community',
     name: 'Community',
     icon: 'home',
+    auth: true,
+    hide: false,
     component: Board,
   },
   {
