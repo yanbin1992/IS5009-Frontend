@@ -1,82 +1,81 @@
-em{
-    font-style: normal;
+em {
+  font-style: normal;
 }
-.cl{
+.cl {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  p {
+    height: 12rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .signs {
     display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
-    p{
-        height: 12rem;
-        img{
-            width: 100%;
-            height: 100%;
-        }
+    background: white;
+    li {
+      height: 6.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      em {
+        display: inline-block;
+        width: 2.6rem;
+        height: 2.6rem;
+        text-align: center;
+        line-height: 2.6rem;
+        border-radius: 1.3rem;
+        color: white;
+      }
+      span {
+        margin-top: 0.5rem;
+      }
     }
-    .signs{
-        display: flex;
-        background: white;
-        li{ 
-            height: 6.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            em{
-                display:inline-block;
-                width: 2.6rem;
-                height: 2.6rem;
-                text-align: center;
-                line-height: 2.6rem;
-                border-radius: 1.3rem;
-                color: white;
-            }
-            span{
-                margin-top: 0.5rem;
-            }
-        }
-        li:hover{
-            background: #fff8f2;
-            position: relative;
-            &:after {
-                content: "";
-                width: 100%;
-                height: 2px;
-                position: absolute;
-                bottom: 0;
-                background: #f56a10;
-                left: 0;
-            }
-        }
-    }
-    .noob{
-        background: white;
-      //  margin: 1rem 0;
-        font-weight: 600;
-        height: 100%;
-        span{
-            margin-top: 1rem;
-        }
-        span:first-child{
-            display:inline-block;
-            height: 1rem;
-            width: 1.2rem;
-            margin-right: 0.5rem;
-            
-        }
-        .door{
-            margin-top: 1rem;
-            display: flex;
-            p{
-                width: 40%;
-                height: 5rem;
-            }
-
-        }
-    }
-    .foots{
+    li:hover {
+      background: #fff8f2;
+      position: relative;
+      &:after {
+        content: '';
         width: 100%;
-        height: 22rem;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        background: #f56a10;
+        left: 0;
+      }
     }
+  }
+  .noob {
+    background: white;
+    //  margin: 1rem 0;
+    font-weight: 600;
+    height: 100%;
+    span {
+      margin-top: 1rem;
+    }
+    span:first-child {
+      display: inline-block;
+      height: 1rem;
+      width: 1.2rem;
+      margin-right: 0.5rem;
+    }
+    .door {
+      margin-left: 1rem;
+      margin-top: 1rem;
+      display: flex;
+      p {
+        width: 40%;
+        height: 5rem;
+      }
+    }
+  }
+  .foots {
+    width: 100%;
+    height: 22rem;
+  }
 }
