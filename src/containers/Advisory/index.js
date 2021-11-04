@@ -1,19 +1,18 @@
 import React from 'react';
 // 头部导航组件
 import Header from './header';
-// 
-import { withRouter } from 'react-router-dom'
-import { getHeight } from "Helper/LayoutHelper"
-
+//
+import { withRouter } from 'react-router-dom';
+import { getHeight } from 'Helper/LayoutHelper';
 
 class Advisory extends React.Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#fff", margin: "-16px", maxHeight: getHeight() - 60 - 45 - 50, overflowY: "scroll" }}>
+      <div style={{ backgroundColor: '#fff', margin: '-16px', maxHeight: getHeight() - 60 - 45, overflowY: 'scroll' }}>
         <Header />
       </div>
-    )
+    );
   }
 }
-Advisory = withRouter(Advisory)
+Advisory = withRouter(Advisory);
 export default Advisory;

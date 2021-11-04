@@ -13,24 +13,23 @@ import mainRoutes from 'routes/mainRoutes';
 import Footer from 'components/Footer';
 import { isMobile } from 'Helper/DeviceHelper';
 import { compose } from 'redux';
-import './iconfont/iconfont.css'
+import './iconfont/iconfont.css';
 
 function App(props) {
-
-  const [mobileMode, setMobileMode] = React.useState(true)
+  const [mobileMode, setMobileMode] = React.useState(true);
 
   const user = React.useMemo(() => {
-    return props.user
-  }, [props.user])
+    return props.user;
+  }, [props.user]);
 
   const onResize = () => {
-    setMobileMode(isMobile())
-  }
+    setMobileMode(isMobile());
+  };
   window.addEventListener('resize', onResize);
 
-  React.useEffect(() => onResize, [])
+  React.useEffect(() => onResize, []);
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ height: '100vh', overflow: 'inherit' }}>
       <Helmet titleTemplate="%s - IS5009 Final Project - FinBot" defaultTitle="IS5009 Final Project - FinBot">
         <meta name="description" content="IS5009 Final Project - FinBot" />
       </Helmet>
@@ -43,7 +42,11 @@ function App(props) {
               {mainRoutes.map(route => (route.auth ? <PrivateRoute {...route} /> : <Route {...route} />))}
             </Switch>
           </Layout.Content>
-          {mobileMode === false ? <Layout.Footer style={{ textAlign: 'center' }}>FinBot</Layout.Footer> : <React.Fragment />}
+          {mobileMode === false ? (
+            <Layout.Footer style={{ textAlign: 'center' }}>FinBot</Layout.Footer>
+          ) : (
+            <React.Fragment />
+          )}
         </Layout>
       </Layout>
       {mobileMode === true && user !== undefined ? <Footer /> : <React.Fragment />}
@@ -59,6 +62,6 @@ const mapStateToProps = createStructuredSelector({
   user: makeSelectUser(),
 });
 
-const withConnect = connect(mapStateToProps)
+const withConnect = connect(mapStateToProps);
 
 export default compose(withConnect, memo)(App);

@@ -12,6 +12,7 @@ import { bankproductdata } from '../../Helper/DataHelper';
 import instance from 'utils/request';
 import { selectPostList } from '../Board/board.selectors';
 import { getPostsAction } from '../Board/board.actions';
+import * as DeviceHelper from 'Helper/DeviceHelper';
 
 function Me(props) {
   const [height, setHeight] = React.useState(window.innerHeight);
@@ -39,8 +40,8 @@ function Me(props) {
   }, [props.user, props.test]);
 
   const onResize = () => {
-    setHeight(getHeight());
-    setWidth(getWidth());
+    setHeight(getHeight() - 60 - 45 - 100);
+    setWidth(DeviceHelper.isMobile() ? getWidth() : getWidth() - 200);
   };
   window.addEventListener('resize', onResize);
 
@@ -54,23 +55,23 @@ function Me(props) {
     () =>
       props.postList.length > 0
         ? {
-          id: props.postList[props.postList.length - 1].id,
-          img: `https://joeschmoe.io/api/v1/${props.user.id}`,
-          pic: `${instance.defaults.baseURL}/v1/posts/attachment/${props.postList[props.postList.length - 1].id}`,
-          content: props.postList[props.postList.length - 1].description,
-          titles: props.postList[props.postList.length - 1].title,
-          checkbox: props.postList[props.postList.length - 1].checkbox,
-          date: props.postList[props.postList.length - 1].createdAt.slice(0, 10),
-          time: props.postList[props.postList.length - 1].createdAt.slice(11, 16),
-        }
+            id: props.postList[props.postList.length - 1].id,
+            img: `https://joeschmoe.io/api/v1/${props.user.id}`,
+            pic: `${instance.defaults.baseURL}/v1/posts/attachment/${props.postList[props.postList.length - 1].id}`,
+            content: props.postList[props.postList.length - 1].description,
+            titles: props.postList[props.postList.length - 1].title,
+            checkbox: props.postList[props.postList.length - 1].checkbox,
+            date: props.postList[props.postList.length - 1].createdAt.slice(0, 10),
+            time: props.postList[props.postList.length - 1].createdAt.slice(11, 16),
+          }
         : {
-          id: 1,
-          title: 'user001',
-          titles: 'Taper will be completed in the middle of next year. ',
-          img: `https://joeschmoe.io/api/v1/random`,
-          pic: 'https://pubimg.futunn.com/201907270121186410c350a87d4.jpg',
-          time: '21:15',
-        },
+            id: 1,
+            title: 'user001',
+            titles: 'Taper will be completed in the middle of next year. ',
+            img: `https://joeschmoe.io/api/v1/random`,
+            pic: 'https://pubimg.futunn.com/201907270121186410c350a87d4.jpg',
+            time: '21:15',
+          },
     [props.postList],
   );
 
@@ -179,10 +180,10 @@ function Me(props) {
     },
   ];
   return (
-    <div style={{ maxHeight: height - 60 - 45 - 50, width: width, overflowY: 'scroll' }}>
+    <div style={{ maxHeight: height, overflowY: 'scroll' }}>
       <div>
         <List>
-          <List.Item style={{ width: width - 50 }}>
+          <List.Item>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               <div style={{ width: '30%' }}>
                 <List.Item.Meta
@@ -224,10 +225,10 @@ function Me(props) {
         </List>
       </div>
       <List
-        grid={{ gutter: 16, column: 1 }}
+        grid={{ column: 1 }}
         dataSource={data}
         renderItem={item => (
-          <List.Item style={{ width: width - 50 }}>
+          <List.Item>
             <Card
               title={
                 <div style={{ display: 'flex', justifyContent: 'space-between', height: '20px' }}>
