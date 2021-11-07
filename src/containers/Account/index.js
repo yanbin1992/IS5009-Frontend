@@ -9,9 +9,9 @@ class Account extends React.Component {
     return (
       <div
         style={{
-          margin: '-16px',
+          margin: '-10px',
           backgroundColor: '#fff',
-          maxHeight: getHeight() - 60 - 45 - 50,
+          maxHeight: getHeight() - 60 - 45 - 20,
           overflowY: 'scroll',
         }}
       >

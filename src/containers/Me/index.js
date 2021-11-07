@@ -94,7 +94,7 @@ function Me(props) {
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <Statistic
             title="Investment Return Rate"
-            value={11.28}
+            value={(props.user.accountData.balance / props.user.accountData.base) * 100}
             precision={2}
             valueStyle={{ color: '#3f8600' }}
             prefix={<ArrowUpOutlined />}
@@ -181,7 +181,16 @@ function Me(props) {
                 <List.Item.Meta
                   avatar={<Avatar src={`https://joeschmoe.io/api/v1/${props.user.id}`} />}
                   title={
-                    <Popover placement="right" trigger="click" content={<a href={'/signout'}>{'SignOut'} </a>}>
+                    <Popover
+                      placement="right"
+                      trigger="click"
+                      content={
+                        <a href={'/signout'}>
+                          <p style={{ margin: '0 0', color: 'darkgray' }}>{'v:0.7.2'}</p>
+                          <p style={{ margin: '0 0', color: 'red' }}>SignOut</p>
+                        </a>
+                      }
+                    >
                       {props.user.name}
                     </Popover>
                   }

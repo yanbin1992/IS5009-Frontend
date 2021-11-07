@@ -15,7 +15,7 @@ import { courselevel2 } from '../../Helper/DataHelper';
 import { courselevel3 } from '../../Helper/DataHelper';
 function Education(props) {
   return (
-    <div className="cl" style={{ margin: '-16px', maxHeight: getHeight() - 60 - 45, overflowY: 'scroll' }}>
+    <div className="cl" style={{ margin: '-16px', maxHeight: getHeight() - 60 - 45 - 20, overflowY: 'scroll' }}>
       <br />
       <Row gutter={16}>
         <br />

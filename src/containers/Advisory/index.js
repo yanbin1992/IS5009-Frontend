@@ -8,7 +8,9 @@ import { getHeight } from 'Helper/LayoutHelper';
 class Advisory extends React.Component {
   render() {
     return (
-      <div style={{ backgroundColor: '#fff', margin: '-16px', maxHeight: getHeight() - 60 - 45, overflowY: 'scroll' }}>
+      <div
+        style={{ backgroundColor: '#fff', margin: '-16px', maxHeight: getHeight() - 60 - 45 - 20, overflowY: 'scroll' }}
+      >
         <Header />
       </div>
     );
