@@ -15,18 +15,10 @@ import { getPostsAction } from '../Board/board.actions';
 import * as DeviceHelper from 'Helper/DeviceHelper';
 
 function Me(props) {
-  const [height, setHeight] = React.useState(window.innerHeight);
+  const [height, setHeight] = React.useState(window.innerHeight - 60 - 45 - 50);
   const [width, setWidth] = React.useState(window.innerWidth);
   const userLevel = React.useMemo(() => {
-    if (
-      props.level &
-      (props.level !==
-        {
-          risk: 0,
-          income: 0,
-          experience: 0,
-        })
-    ) {
+    if (props.level && !(props.level.risk == 0 && props.level.income == 0 && props.level.experience == 0)) {
       return props.level;
     } else if (props.user.level) {
       return props.user.level;
@@ -37,8 +29,8 @@ function Me(props) {
         experience: 0,
       };
     }
-  }, [props.user, props.test]);
-
+  }, [props.user, props.level]);
+  console.log('used level>>>', props, userLevel);
   const onResize = () => {
     setHeight(getHeight() - 60 - 45 - 100);
     setWidth(DeviceHelper.isMobile() ? getWidth() : getWidth() - 200);

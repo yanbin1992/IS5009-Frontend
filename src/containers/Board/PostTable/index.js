@@ -14,7 +14,7 @@ function PostTable(props) {
   /* ------------------ */
   const columns = [
     {
-      title: 'Mark',
+      title: 'M',
       dataIndex: 'checkbox',
       key: 'checkbox',
       render: (value, record, index) => (
@@ -22,6 +22,7 @@ function PostTable(props) {
           checked={value}
           id={index}
           record={record}
+          style={{ width: isMobile() === true ? '15px' : '20px' }}
           // disabled={this.state.disabled}
           onChange={handleOnChange}
         />
@@ -37,7 +38,14 @@ function PostTable(props) {
       dataIndex: 'description',
       key: 'description',
       render: text => (
-        <pre style={{ marginBottom: 0, maxHeight: 150, maxWidth: isMobile() === true? '100px' : '1000px', wordBreak: 'normal' }}>
+        <pre
+          style={{
+            marginBottom: 0,
+            maxHeight: 150,
+            maxWidth: isMobile() === true ? '90px' : '1000px',
+            wordBreak: 'normal',
+          }}
+        >
           {text}
         </pre>
       ),
@@ -64,7 +72,7 @@ function PostTable(props) {
         View
       </Button>
     ) : (
-      <Button onClick={() => renderModal(id)}>Attach</Button>
+      <Button onClick={() => renderModal(id)}>{isMobile() === true ? 'Att' : 'Attach'}</Button>
     );
   };
 
@@ -73,7 +81,6 @@ function PostTable(props) {
   };
 
   const renderViewAttachment = id => {
-
     window.open(`${instance.defaults.baseURL}/v1/posts/attachment/${id}`);
     // props.onViewAttachment(props.attachmentPath)
   };

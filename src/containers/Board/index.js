@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Row, Col, Button } from 'antd';
-import { getHeight } from "Helper/LayoutHelper"
+import { getHeight } from 'Helper/LayoutHelper';
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import {
@@ -22,29 +22,23 @@ import AddAttachmentModal from './AddAttachmentModal';
 import PostTable from './PostTable';
 import Condition from './Posts/Condition';
 // import ShowTable from './ShowTable';
-import {
-  EditOutlined
-} from '@ant-design/icons';
+import { EditOutlined } from '@ant-design/icons';
 const key = 'board';
 
 function Board(props) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
-  const [height, setHeight] = React.useState(window.innerHeight)
+  const [height, setHeight] = React.useState(window.innerHeight);
 
   const onResize = () => {
-    setHeight(getHeight())
-  }
+    setHeight(getHeight());
+  };
   window.addEventListener('resize', onResize);
 
   useEffect(() => {
     props.getPosts();
   }, []);
-
-  // const handleOnCheckboxChange = (id, value) => {
-  //   props.onChangeCheckbox(id, value);
-  // };
 
   return (
     <>
@@ -52,16 +46,22 @@ function Board(props) {
         <title>Community</title>
         <meta name="Task" content="Community" />
       </Helmet>
-      <div style={{ maxHeight: height - 60 - 45 - 80, overflowY: "scroll" }}>
+      <div style={{ maxHeight: height - 60 - 45 - 50, overflowY: 'scroll' }}>
         <div style={{ marginLeft: 16 }}>
-          <p style={{ width: '6rem', height: '4rem', display: "inline" }}>
+          <p style={{ width: '6rem', height: '4rem', display: 'inline' }}>
             <Button type="primary" onClick={props.handleModalShow}>
-              <EditOutlined style={{ fontSize: '18px', display: "inline" }} />Write your post</Button></p>
+              <EditOutlined style={{ fontSize: '18px', display: 'inline' }} />
+              Write your post
+            </Button>
+          </p>
         </div>
 
         <Row>
           <Col span={24}>
-            <PostTable onCheckboxChange={props.onChangeCheckbox} onAttachButtonClick={props.handleAttachmentModalShow} />
+            <PostTable
+              onCheckboxChange={props.onChangeCheckbox}
+              onAttachButtonClick={props.handleAttachmentModalShow}
+            />
           </Col>
         </Row>
 
